@@ -1,46 +1,95 @@
-# 🧠 Sales Insights Dashboard – AtliQ Hardware
-> SQL + MySQL + Power BI Project
 
-This project presents a detailed **Sales Insights Dashboard** for **AtliQ**, a hardware manufacturing company. The goal was to analyze historical sales data to identify trends, patterns, and opportunities for business growth.
+---
 
+## 📥 1. Data Source (Kaggle)
+
+Dataset used: **Sample Superstore Dataset**  
+Kaggle Link: https://www.kaggle.com/datasets/vivek468/superstore-dataset-final
+
+The dataset includes:
+
+- 9,000+ rows  
+- Customer, product, shipping, geography  
+- Order and ship dates  
+- Sales, discount, profit  
+
+---
+
+## 🧼 2. Preprocessing in Python (Pandas + NumPy)
+
+All major cleaning and transformations were done in Python to keep the workflow **reproducible and version-controlled**.
+
+### ✔ Key preprocessing steps:
+- Removed duplicates and invalid rows  
+- Parsed `Order Date` and `Ship Date`  
+- Standardized text fields (City, Region, Category, Product Name, etc.)  
+- Created **Year**, **Month**, **Month_Name**  
+- Added **Revenue** and **Profit Margin** metrics  
+- Generated **monthly aggregated tables** for faster Power BI performance  
+
+### 🔧 Main Script:
+[`preprocess_superstore.py`](./preprocess_superstore.py)
+
+### ✔ Output Files:
+- `cleaned_data/superstore_cleaned.csv`  
+- `cleaned_data/superstore_monthly_sales.csv`
+
+---
+
+## 🔍 3. Light Transformations in Power Query
+
+Only minimal steps were applied:
+
+- Datatype corrections  
+- Column renaming  
+- Final model adjustments  
+- Relationship creation (Date → Sales, Product → Sales, Customer → Sales)
+
+Complex logic was intentionally kept in Python.
+
+---
+
+## 📊 4. Power BI Dashboard
 📊 [**Click here to view the interactive dashboard**](https://app.powerbi.com/view?r=eyJrIjoiZjA2NWY4OTgtZmY3MC00NzVmLWJhZmMtMzQ4ODNkZWEyZTkyIiwidCI6ImMzMGI2ZmZmLTRiZGItNGUzOS1hNDY3LWU1ODFkM2QyNTNiYyJ9)
 
 ---
 ## Preview of the Dashboard
 ![Dashboard Preview](https://github.com/PrudhviKoduru/Sales_insights_Atliq/blob/88daa18605ffbfa4dbec63628d5f9fc99a8377bb/Dashboard/Dashboard%201.png)
 
-## 🚀Process I have done:
+The Power BI dashboard visualizes key retail insights:
 
-- ✅ **Data Source**: Imported sales and product data from **Codebasics MySQL database**.
-- 🧹 **Data Cleaning**: Handled nulls, ensured data consistency, and performed joins using SQL.
-- 📤 **ETL**: Cleaned data exported to Power BI for modeling and visualization.
-- 📈 **Interactive Dashboard**: Designed an intuitive dashboard to analyze KPIs like:
-  - Monthly and quarterly sales trends
-  - Top-performing products and regions
-  - Contribution by customer segments
-- 📌 **Business Value**: The dashboard provides insights that can potentially **increase revenue by 7% in the next quarter** through informed decision-making.
+### **Key Visuals**
+- Monthly revenue trend  
+- Profit vs. discount analysis  
+- Top-performing categories and sub-categories  
+- Region-wise performance  
+- Customer and product-level KPIs  
+- Ship Mode breakdown  
+- Profitability segmentation  
 
----
-
-## 🛠️ Tools & Technologies
-- **SQL,MySQL & Power Query**: For data wrangling and transformation.
-- **Power BI**: For visualization and dashboard creation.
-- **DAX**: Used for calculated columns and measures.
-
----
-
-## 📌 Future Enhancements
-- Integrate predictive analytics using Python & Power BI for sales forecasting.
-- Automate data refresh using Power BI Gateway.
+### **KPIs Included**
+- Total Revenue  
+- Total Quantity Sold  
+- Total Profit  
+- Average Discount  
+- Profit Margin  
 
 ---
 
-## 🙌 Acknowledgements
-- Codebasics for the dataset and inspiration.
-- Microsoft Power BI Community for visual best practices.
+## 🧠 5. Insights Derived
+
+Some example insights:
+
+- Certain sub-categories drive high volume but low profit  
+- High-discount regions often show reduced profitability  
+- Clear seasonality patterns in quarterly sales  
+- Segment-wise differences in customer purchasing behavior  
+- West and East regions show strong revenue contribution  
 
 ---
 
-## 📬 Contact
-For suggestions or collaboration, feel free to connect via [LinkedIn](https://www.linkedin.com/in/prudhvi-koduru)| [Gmail](mailto:koduruprudhvi03@gmail.com)
+## 🚀 6. How to Reproduce This Project
 
+### **1. Install dependencies**
+```bash
+pip install pandas numpy
