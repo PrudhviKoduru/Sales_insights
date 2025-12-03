@@ -1,4 +1,19 @@
 
+# 📊 Retail Sales Analytics – Superstore Dashboard  
+**Python + Pandas + Power BI + Kaggle Dataset**
+
+This project analyzes retail sales performance using the popular **Superstore dataset**.  
+The workflow follows an industry-style data pipeline:
+
+1. **Data sourced from Kaggle**
+2. **Preprocessing and feature engineering in Python (Pandas, NumPy)**
+3. **Light transformations in Power Query**
+4. **Interactive dashboard built in Power BI**
+5. **Cleaned & aggregated datasets exported for reporting**
+
+
+
+
 ---
 
 ## 📥 1. Data Source (Kaggle)
